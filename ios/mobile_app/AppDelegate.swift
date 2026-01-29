@@ -2,6 +2,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import RNBootSplash
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     return true
   }
+
+
 }
 
 class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
@@ -38,11 +41,17 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
     self.bundleURL()
   }
 
-  override func bundleURL() -> URL? {
-#if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
-#else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-#endif
+   // ⬇️ override this method
+  override func customize(_ rootView: RCTRootView) {
+    super.customize(rootView)
+    RNBootSplash.initWithStoryboard("LaunchScreen", rootView: rootView) // ⬅️ initialize the splash screen
   }
+
+    override func bundleURL() -> URL? {
+  #if DEBUG
+      RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+  #else
+      Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+  #endif
+    }
 }
