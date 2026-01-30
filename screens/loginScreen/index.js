@@ -1,11 +1,18 @@
-import React from 'react';
-import { Button, Wrapper } from '../../components/base';
-import { StyleSheet } from 'react-native';
-import { Colors, ScreenName } from '../../theme';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, Wrapper } from '../../components/base';
+import { setUserData } from '../../store/mobileApi/auth.slice';
+import { Colors } from '../../theme';
 
 export const LoginScreen = () => {
     const navigation = useNavigation();
+    const dispatch = useDispatch();
+    const { userData } = useSelector((state) => state.Auth);
+
+    console.log(userData, 'userData');
+
     return (
         <Wrapper
             safeAreaView={true}
@@ -14,8 +21,9 @@ export const LoginScreen = () => {
 
             <Button
                 title="Login"
-                onPress={() => { 
-                    navigation.navigate(ScreenName.HomeScreen);
+                onPress={() => {
+                    dispatch(setUserData({ email: 'test@test.com' }));
+
                 }}
             />
         </Wrapper>

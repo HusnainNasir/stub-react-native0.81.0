@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { screens } from '@screens';
 import { connectors } from '@store';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import BootSplash from 'react-native-bootsplash';
 import 'react-native-gesture-handler';
 import { Provider as PaperProvider } from 'react-native-paper';

@@ -21,14 +21,7 @@ module.exports = {
         allowUndefined: true,
       },
     ],
-    // [
-    //   'react-native-reanimated/plugin',
-    //   {
-    //     processNestedWorklets: true,
-    //   },
-    // ],
     'import-glob-meta',
-    // "@jteppinette/babel-plugin-import-glob",
     ['react-native-worklets/plugin', workletsPluginOptions],
   ],
 };

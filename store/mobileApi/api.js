@@ -84,6 +84,10 @@ const errorHandler = async error => {
 };
 
 
-export const apiService = {
+function api_v1_login(payload) {
+  return mobileApi.post(`api/v1/login/`, payload);
+}
 
+export const apiService = {
+  api_v1_login,
 };

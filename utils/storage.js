@@ -1,4 +1,4 @@
-import {createMMKV, MMKV} from 'react-native-mmkv';
+import { createMMKV } from 'react-native-mmkv';
 
 
 let storage;
