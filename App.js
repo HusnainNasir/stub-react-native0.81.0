@@ -24,7 +24,7 @@ const getNavigation = (modules, store) => {
 
   const getInitialRoute = () => {
 
-    return ScreenName.LoginScreen;
+    return ScreenName.HomeNavigator;
   };
 
   const initialRoute = getInitialRoute();

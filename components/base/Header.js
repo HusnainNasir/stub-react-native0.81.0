@@ -21,10 +21,6 @@ export const Header = ({
   title,
   drawer,
   headerStyle,
-  centerIcon,
-  subtitle,
-  isTrademark = false,
-  isSubTitleTrademark = false
 }) => {
   const insets = useSafeAreaInsets();
 
@@ -34,9 +30,6 @@ export const Header = ({
     <View
       style={[
         styles.container,
-        {
-          marginTop: isSafeAreaPhone ? verticalScale(10) : verticalScale(20),
-        },
         headerStyle,
       ]}>
       {onPress !== undefined && onPress !== null && (
@@ -59,64 +52,20 @@ export const Header = ({
         </TouchableOpacity>
       )}
 
-      <View
-        style={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          alignItems: 'center',
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center'
-          }}>
+      {
+        title && (
           <Text
             style={{
-              maxWidth: '60%',
-              textAlign: 'center',
+              flex: 1,
+              // textAlign: 'center',
             }}
-            ff={'medium'}
-            fs={'XXXL'}
+            ff={'bold'}
+            fs={'XL'}
             color={Colors.white}>
             {title}
           </Text>
-
-          {isTrademark && (
-            <View
-              style={{
-                marginTop: verticalScale(-8),
-              }}>
-              <Text ff={'bold'} color={Colors.white} fs={'XXXS'}>
-                {' TM'}
-              </Text>
-            </View>
-          )}
-        </View>
-
-        {subtitle && (
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Text ff={'medium'} fs={'L'} color={Colors.white}>
-              {subtitle}
-            </Text>
-
-            {isSubTitleTrademark && (
-              <View
-                style={{
-                  marginTop: verticalScale(-8),
-                }}>
-                <Text ff={'bold'} color={Colors.white} fs={'XXXS'}>
-                  {' TM'}
-                </Text>
-              </View>
-            )}
-          </View>
-        )}
-      </View>
+        )
+      }
 
       {onRightPress && (
         <TouchableOpacity
@@ -140,8 +89,9 @@ const styles = StyleSheet.create({
     height: verticalScale(45),
     alignItems: 'center',
     flexDirection: 'row',
-    paddingHorizontal: moderateScale(30),
+    paddingHorizontal: moderateScale(14),
     gap: moderateScale(20),
+    backgroundColor: Colors.primary,
   },
 
   backBtnContainer: {

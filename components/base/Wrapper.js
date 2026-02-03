@@ -22,15 +22,9 @@ export const Wrapper = ({
   safeAreaView = true,
   bounces = true,
   scrollStyle,
-  gradient = false,
   drawer,
-  centerIcon,
   headerStyle,
   topContainerStyle,
-  subtitle,
-  isTrademark = false,
-  isSubTitleTrademark = false,
-  isLinear = true,
 }) => {
   const containerStyle = style ?? {
     flex: scroll ? undefined : 1,
@@ -76,15 +70,18 @@ export const Wrapper = ({
 
   return (
     <>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: Colors.primary }}>
         <StatusBar
-          barStyle={Platform.OS === 'ios' ? 'dark-content' : 'dark-content'}
+          barStyle={Platform.OS === 'ios' ? 'light-content' : 'dark-content'}
           backgroundColor={Colors.black}
         />
 
         <Loader loading={loading} />
+
         {safeAreaView ? (
-          <SafeAreaView style={{ flex: 1 }} edges={edges}>
+          <SafeAreaView
+            style={{ flex: 1  }}
+            edges={edges}>
             {header && (
               <Header
                 drawer={drawer}
@@ -92,13 +89,8 @@ export const Wrapper = ({
                 onRightPress={onRightPress}
                 loading={rightLoading}
                 rightIcon={rightIcon}
-                isTrademark={isTrademark}
-                isSubTitleTrademark={isSubTitleTrademark}
                 title={title}
-                gradient={gradient}
-                centerIcon={centerIcon}
                 headerStyle={headerStyle}
-                subtitle={subtitle}
               />
             )}
             {scroll ? getScrollView() : getView()}
@@ -112,13 +104,8 @@ export const Wrapper = ({
                 onRightPress={onRightPress}
                 loading={rightLoading}
                 rightIcon={rightIcon}
-                isTrademark={isTrademark}
-                isSubTitleTrademark={isSubTitleTrademark}
                 title={title}
-                gradient={gradient}
-                centerIcon={centerIcon}
                 headerStyle={headerStyle}
-                subtitle={subtitle}
               />
             )}
             {scroll ? getScrollView() : getView()}

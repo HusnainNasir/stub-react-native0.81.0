@@ -23,7 +23,7 @@ export const LoginScreen = () => {
                 title="Login"
                 onPress={() => {
                      dispatch(setUserData({ email: 'test@test.com' }));
-                    // navigation.navigate(ScreenName.SignupScreen);
+                    navigation.navigate(ScreenName.HomeNavigator);
 
                 }}
             />
