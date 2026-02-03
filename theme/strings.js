@@ -1,6 +1,7 @@
 export const ScreenName = {
   LoginScreen: 'loginScreen',
   HomeScreen: 'homeScreen',
+  SignupScreen: 'signupScreen',
 };
 
 export const Strings = {

@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Wrapper } from '../../components/base';
 import { setUserData } from '../../store/mobileApi/auth.slice';
-import { Colors } from '../../theme';
+import { Colors, ScreenName } from '../../theme';
 
 export const LoginScreen = () => {
     const navigation = useNavigation();
@@ -22,7 +22,8 @@ export const LoginScreen = () => {
             <Button
                 title="Login"
                 onPress={() => {
-                    dispatch(setUserData({ email: 'test@test.com' }));
+                     dispatch(setUserData({ email: 'test@test.com' }));
+                    // navigation.navigate(ScreenName.SignupScreen);
 
                 }}
             />
@@ -36,5 +37,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.white,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });

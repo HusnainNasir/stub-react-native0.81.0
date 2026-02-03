@@ -2766,9 +2766,9 @@ babel-jest@^29.7.0:
     graceful-fs "^4.2.9"
     slash "^3.0.0"
 
-"babel-plugin-import-glob-meta@github:crowdbotics/babel-plugin-import-glob-meta":
+"babel-plugin-import-glob-meta@github:HusnainNasir/babel-plugin-import-glob-meta":
   version "1.0.0"
-  resolved "https://codeload.github.com/crowdbotics/babel-plugin-import-glob-meta/tar.gz/fdffe71d6c97b2c1fc7cdffbaf15dbe1d023dfa5"
+  resolved "https://codeload.github.com/HusnainNasir/babel-plugin-import-glob-meta/tar.gz/fdffe71d6c97b2c1fc7cdffbaf15dbe1d023dfa5"
   dependencies:
     glob "^7.1.7"
     identifierfy "^2.0.0"
