@@ -30,6 +30,9 @@ export const Header = ({
     <View
       style={[
         styles.container,
+        {
+          // marginTop: isSafeAreaPhone ? verticalScale(10) : verticalScale(20),
+        },
         headerStyle,
       ]}>
       {onPress !== undefined && onPress !== null && (

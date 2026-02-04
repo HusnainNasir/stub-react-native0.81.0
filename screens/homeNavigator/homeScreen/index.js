@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { Wrapper } from '../../../components/base';
 import { Colors, Strings } from '../../../theme';
-import { ApiLoader } from '../../../components/ApiLoader';
 
 const HomeScreen = () => {
     return (
